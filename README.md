@@ -136,22 +136,35 @@ Program akan menampilkan:
 ```
 === Program Peta Kota Malang ===
 Daftar Lokasi:
+- Balai Kota
+- Universitas Brawijaya
+- Ijen Boulevard
+- Kayutangan
 - Stasiun Kota Baru
 - Alun-Alun Kota Malang
-- Kayutangan
-...
+- Museum Brawijaya
+- Matos
+----------------------------------
+NOTE: Penulisan harus sama persis (case-sensitive)
+Masukkan titik asal: Balai Kota
+Masukkan titik tujuan: Matos
 
-Dari Stasiun Kota Baru menuju Universitas Brawijaya:
+--- HASIL ---
+Dari Balai Kota menuju Matos:
 BFS: Dapat dijangkau
 DFS: Dapat dijangkau
 
 Menggunakan BFS:
-Total jarak: 7 km, total waktu: 40 menit
-Jalur: Stasiun Kota Baru , Alun-Alun Kota Malang , Kayutangan , ...
+Total jarak: 5 km, total waktu: 23 menit
+Jalur: Balai Kota , Museum Brawijaya , Ijen Boulevard , Matos
 
-Menggunakan Dijkstra:
-Total jarak: 6 km, total waktu: 28 menit
-Jalur: Stasiun Kota Baru , Alun-Alun Kota Malang , Kayutangan , Balai Kota , ...
+Menggunakan DFS:
+Total jarak: 5 km, total waktu: 23 menit
+Jalur: Balai Kota , Museum Brawijaya , Ijen Boulevard , Matos
+
+Menggunakan Dijkstra (Jalur Terpendek):
+Total jarak: 5 km, total waktu: 23 menit
+Jalur: Balai Kota , Museum Brawijaya , Ijen Boulevard , Matos
 ```
 
 ---
