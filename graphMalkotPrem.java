@@ -1,9 +1,5 @@
-package GRAPHPAKBUCE;
 import java.util.*;
 
-// =========================
-// Class Edge
-// =========================
 class Edge {
     String tujuan;
     int jarak;
@@ -16,9 +12,6 @@ class Edge {
     }
 }
 
-// =========================
-// Class PathResult
-// =========================
 class PathResult {
     List<String> path;
     int jarak;
@@ -31,9 +24,6 @@ class PathResult {
     }
 }
 
-// =========================
-// CLASS GRAPH
-// =========================
 class Graphhh {
 
     private Map<String, List<Edge>> graph = new HashMap<>();
@@ -61,9 +51,7 @@ class Graphhh {
         return graph.containsKey(lokasi);
     }
 
-    // ======================
     // BFS Cek keterjangkauan
-    // ======================
     public boolean bisaPergiBFS(String start, String goal) {
         Set<String> visited = new HashSet<>();
         Queue<String> q = new LinkedList<>();
@@ -83,9 +71,7 @@ class Graphhh {
         return false;
     }
 
-    // ======================
     // DFS cek keterjangkauan
-    // ======================
     public boolean bisaPergiDFS(String start, String goal) {
         return dfsHelper(start, goal, new HashSet<>());
     }
@@ -102,9 +88,7 @@ class Graphhh {
         return false;
     }
 
-    // ======================
     // BFS Cari Rute
-    // ======================
     public PathResult cariRuteBFS(String start, String goal) {
         Queue<List<String>> q = new LinkedList<>();
         Set<String> visited = new HashSet<>();
@@ -132,9 +116,7 @@ class Graphhh {
         return null;
     }
 
-    // ======================
     // DFS Cari Rute
-    // ======================
     public PathResult cariRuteDFS(String start, String goal) {
         Set<String> visited = new HashSet<>();
         List<String> path = new ArrayList<>();
@@ -164,9 +146,7 @@ class Graphhh {
         return false;
     }
 
-    // ======================
     // DIJKSTRA - Jalur Terpendek
-    // ======================
     public PathResult jalurTerpendek(String start, String goal) {
 
         Map<String, Integer> jarak = new HashMap<>();
@@ -226,9 +206,7 @@ class Graphhh {
         return new PathResult(path, totalJarak, totalWaktu);
     }
 
-    // ======================
     // Hitung Jarak & Waktu Path
-    // ======================
     private PathResult hitungPath(List<String> path) {
         int totalJarak = 0;
         int totalWaktu = 0;
@@ -248,9 +226,7 @@ class Graphhh {
 }
 
 
-// =========================
 // MAIN PROGRAM
-// =========================
 public class graphMalkotPrem {
     public static void main(String[] args) {
 
@@ -329,5 +305,6 @@ public class graphMalkotPrem {
         }
     }
 }
+
 
 
