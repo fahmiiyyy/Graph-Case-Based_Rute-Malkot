@@ -1,153 +1,145 @@
-# Graph-Case-Based_Rute-Malkot
-🗺️ Program Peta Kota Malang
-Implementasi Graph, BFS, DFS, dan Dijkstra dalam Java
+# 🗺️ Graph Case-Based: Rute Kota Malang
 
-Program ini merupakan simulasi peta sederhana Kota Malang menggunakan struktur Graph.
+Program ini merupakan simulasi peta sederhana Kota Malang menggunakan struktur **Graph**.  
 Di dalamnya terdapat fitur untuk mengecek keterjangkauan lokasi serta menemukan jalur dari satu titik ke titik lain menggunakan tiga algoritma:
 
-BFS (Breadth First Search)
-
-DFS (Depth First Search)
-
-Dijkstra (Jalur Terpendek berdasarkan jarak)
+- **BFS (Breadth First Search)**
+- **DFS (Depth First Search)**
+- **Dijkstra (Shortest Path)**
 
 Program berjalan di terminal dan menerima input lokasi asal dan tujuan dari pengguna.
 
-📌 Fitur Utama
-1. Representasi Graph
+---
 
-Node merepresentasikan lokasi di Kota Malang
+## 📌 Fitur Utama
 
-Edge menyimpan:
+### 1. Representasi Graph
+- Setiap **node** adalah lokasi di Kota Malang  
+- Setiap **edge** memiliki:
+  - Jarak (km)
+  - Waktu tempuh (menit)
+- Graph bersifat **dua arah**
 
-jarak (km)
+### 2. Cek Keterjangkauan
+Program dapat menentukan apakah dua titik saling terhubung menggunakan:
+- BFS
+- DFS
 
-waktu tempuh (menit)
+### 3. Pencarian Jalur
+Program menghasilkan:
+- Jalur lengkap (list lokasi)
+- Total jarak tempuh
+- Total waktu tempuh
 
-Graph bersifat dua arah
+Metode yang tersedia:
+- BFS → eksplorasi per level  
+- DFS → eksplorasi mendalam  
+- Dijkstra → jalur terpendek berdasarkan jarak
 
-2. Cek Keterjangkauan
+---
 
-Program dapat mengecek apakah suatu lokasi dapat dijangkau dari lokasi lainnya menggunakan:
+## 🏛️ Struktur Kode
 
-BFS
-
-DFS
-
-3. Pencarian Jalur
-
-Program mengembalikan jalur lengkap serta total jarak & waktu menggunakan:
-
-BFS → mencari rute dengan penjelajahan level-by-level
-
-DFS → mencari jalur secara mendalam
-
-Dijkstra → mencari jalur terpendek berdasarkan total jarak
-
-Setiap rute menghasilkan:
-
-- Daftar jalur yang dilalui
-- Total jarak (km)
-- Total waktu (menit)
-
-🏛️ Struktur Kode
-1. Edge
-
+### **1. Edge**
 Menyimpan data jalur:
-
+```java
 class Edge {
     String tujuan;
     int jarak;
     int waktu;
 }
+````
 
-2. PathResult
+### **2. PathResult**
 
-Merepresentasikan output jalur:
+Menyimpan hasil perhitungan rute:
 
+```java
 class PathResult {
     List<String> path;
     int jarak;
     int waktu;
 }
+```
 
-3. Graphhh
+### **3. Graphhh**
 
-Fungsi utama:
+Fungsi utama mencakup:
 
-Menambah lokasi & jalur
+* Menambah lokasi & jalur
+* BFS & DFS reachability check
+* BFS & DFS route search
+* Dijkstra shortest path
+* Menghitung total jarak & waktu rute
 
-Mengecek keterjangkauan BFS & DFS
+### **4. graphMalkotPrem (Main Program)**
 
-Mencari rute BFS & DFS
+Terdiri dari:
 
-Dijkstra untuk jalur terpendek
+* Inisialisasi peta Kota Malang
+* Input titik asal & tujuan
+* Menampilkan hasil BFS, DFS, dan Dijkstra
 
-Menghitung total jarak & waktu
+---
 
-4. graphMalkotPrem (Main Program)
+## 🗂️ Data Peta Kota Malang
 
-Berisi:
+Lokasi yang digunakan antara lain:
 
-Inisialisasi peta Kota Malang
+* Stasiun Kota Baru
+* Alun-Alun Kota Malang
+* Kayutangan
+* Balai Kota
+* Museum Brawijaya
+* Ijen Boulevard
+* Matos
+* Universitas Brawijaya
 
-Input pengguna
+Semua lokasi saling terhubung melalui jalur dengan jarak & waktu yang realistis.
 
-Output hasil pencarian rute
+---
 
-🗂️ Data Peta Kota Malang
+## ▶️ Cara Menjalankan Program
 
-Beberapa lokasi yang digunakan:
+1. Pastikan Java terinstal
+2. Simpan file dengan struktur package:
 
-Stasiun Kota Baru
+```
+GRAPHPAKBUCE
+```
 
-Alun-Alun Kota Malang
+3. Compile program:
 
-Kayutangan
-
-Balai Kota
-
-Museum Brawijaya
-
-Ijen Boulevard
-
-Matos
-
-Universitas Brawijaya
-
-Seluruh lokasi dikoneksikan dengan jarak dan waktu tempuh realistis.
-
-▶️ Cara Menjalankan Program
-
-Pastikan Java sudah terinstal.
-
-Simpan file dengan struktur package yang sesuai (GRAPHPAKBUCE).
-
-Jalankan program:
-
+```bash
 javac graphMalkotPrem.java
+```
+
+4. Jalankan:
+
+```bash
 java GRAPHPAKBUCE.graphMalkotPrem
+```
 
-
-Masukkan titik asal dan tujuan sesuai daftar lokasi.
+5. Masukkan titik asal dan tujuan sesuai daftar lokasi
 
 Program akan menampilkan:
 
-Status keterjangkauan (BFS & DFS)
+* Status keterjangkauan (BFS & DFS)
+* Jalur hasil BFS
+* Jalur hasil DFS
+* Jalur terpendek hasil Dijkstra
 
-Jalur versi BFS
+---
 
-Jalur versi DFS
+## 📝 Contoh Output
 
-Jalur terpendek versi Dijkstra
-
-📝 Contoh Output
+```
 === Program Peta Kota Malang ===
 Daftar Lokasi:
 - Stasiun Kota Baru
 - Alun-Alun Kota Malang
 - Kayutangan
-- ...
+...
 
 Dari Stasiun Kota Baru menuju Universitas Brawijaya:
 BFS: Dapat dijangkau
@@ -157,26 +149,35 @@ Menggunakan BFS:
 Total jarak: 7 km, total waktu: 40 menit
 Jalur: Stasiun Kota Baru , Alun-Alun Kota Malang , Kayutangan , ...
 
-Menggunakan Dijkstra (Jalur Terpendek):
+Menggunakan Dijkstra:
 Total jarak: 6 km, total waktu: 28 menit
 Jalur: Stasiun Kota Baru , Alun-Alun Kota Malang , Kayutangan , Balai Kota , ...
+```
 
-🧠 Algoritma yang Digunakan
-BFS
+---
 
-Cocok untuk mencari rute dengan lapisan terdekat terlebih dahulu.
-Menjamin menemukan jalur dengan jumlah simpul paling sedikit—bukan jarak.
+## 🧠 Algoritma yang Digunakan
 
-DFS
+### **BFS**
 
-Menjelajah secara mendalam.
-Tidak menjamin jalur paling optimal.
+* Menjelajah per level
+* Menjamin jumlah node paling sedikit
+* Tidak menjamin jarak terpendek
 
-Dijkstra
+### **DFS**
 
-Menghasilkan jalur paling pendek berdasarkan jarak.
-Menggunakan priority queue untuk efisiensi.
+* Menjelajah secara mendalam
+* Tidak menjamin rute optimal
+* Cocok untuk eksplorasi keseluruhan jalur
 
-📄 Lisensi
+### **Dijkstra**
 
-Kode ini dapat digunakan bebas untuk keperluan pembelajaran.
+* Menemukan rute **dengan jarak total paling pendek**
+* Menggunakan priority queue untuk efisiensi
+
+---
+
+## 📄 Lisensi
+
+Program ini bebas digunakan untuk pembelajaran dan pengembangan.
+
